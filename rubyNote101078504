@@ -1,0 +1,67 @@
+#定義類別 (ruby的物件導向
+class cat
+def catmiou
+#codes....
+end
+end
+
+catFather = new.cat
+catFather.catmiou
+
+to_a #to."要轉換成的東西"
+(1+1).to_s #string> "2" (數字轉字元
+
+string class:
+puts "xxx"<<"yyy" #xxxyyy (跟java的"xxx"+"yyy"一樣
+puts "My name is 'Joy'" #My name is 'Joy'
+
+x = "this is test" #先設定一個字串物件
+puts x.sub('test','not test') #this is not test (.sub 將x裡面的'test'改成'not test'
+
+puts x.empty? #false (檢查x是否為空
+puts x.split #["this", "is", "test"] (回傳為陣列 array
+puts x.split(' ') #使用空白字元當切割點
+
+myDate = "20070123"
+puts myDate.slice(0..3) #2007 （#slice(開始位置..結束位置）
+puts myDate.slice(4..5) #01
+
+#Hash的Key和Value可以是不同型態的物件
+dictHash = {
+"天才" => "聰明的人",
+"笨蛋" => "不聰明的人",
+"家人" => "在法律上有血緣關係的人"
+}
+puts dictHash["天才"] #聰明人
+#加入新的Key-Value
+dictHash["new123"] = "it is new123"
+dictHash.delete("new123") #刪除"new123"
+
+#each顯示Hash內容
+#把key和value傳到code block
+dictHash.each { |key,value| puts "#{key} => #{value}" }
+=begin
+家人 => 在法律上有血緣關係的人
+笨蛋 => 不聰明的人
+天才 => 聰明人
+=end
+
+join // The join method took that list of reversed lines and put them together into a string.
+// could have also just used to_s
+
+: //When you place a colon in front of a simple word, you get a symbol. Symbols are cheaper than strings (in terms of computer memory.)
+
+books["Gravity's Rainbow"]=:splendid //將一筆資料放進去包含書名和評價
+
+books["Gravity's Rainbow"] //輸入可得評價
+
+Symbols=> :splendid
+
+Blocks=> books.values.each{|rate| ratings[rate]+=1}
+//Blocks are always attached to methods. Like the times
+
+FileUtils.cp('/comics.txt','/Home/comics­.txt') //複製檔案加到home底下
+
+File.foreach //is a method which opens a file and hands each line to the block. The line variable inside the do...end block took turns with each line in the file.
+
+strip //removes extra spaces around the name. Just in case.

@@ -1,5 +1,3 @@
-10/25
-
 controller (Movies.xxx) ->(connect) views/index Moive.xxx
 
 #定義類別 (ruby的物件導向

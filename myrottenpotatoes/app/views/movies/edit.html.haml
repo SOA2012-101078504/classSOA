@@ -14,3 +14,7 @@
   = date_select :movie, :release_date
 
   = submit_tag 'Update Movie Info'
+
+  = link_to 'Edit info', edit_movie_path(@movie)
+  = link_to 'Delete', movie_path(@movie), :method => :delete
+  -# = button_to 'Delete', movie_path(@movie), :method => :delete, :confirm => 'Are you sure?'

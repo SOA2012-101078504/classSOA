@@ -1,4 +1,48 @@
+11/3
+Pitfall: Modifying the database manually rather than using migrations, or managing gems manually rather than using Bundler.
+*Fat controllers and fat views.
+*Overstuffing the session[] hash.
+
+flash[:notice]
+可以提示使用者一些資訊(來自前頁面)
+
+
+產生一個Controller檔案，輸入
+  rails g controller events
+
+Redirect
+  如果Action不要render任何結果，而是要使用者轉向到別頁，可以使用   
+  "redirect_to"
+  redirect_to :action => "show", :id => @event
+  redirect_to :back 回到上一頁。
+    *注意，一個Action中只能有一個render或一個redirect_to。不然你會得到
+     一個DoubleRenderError例外錯誤。
+
+respond_torespond_to可以用來回應不同的資料格式。Rails內建支援格式包括有:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :json等。如果需要擴充，可以編輯config/initializers/mime_types.rb這個檔案。
+
+  如果想要設定一個else的情況，可以用:any：
+
+  respond_to do |format|
+  format.html
+  format.xml { render :xml => @event.to_xml }
+  format.any { render :text => "WTF" }
+  end
+
+rails g model category
+  這個指令會產生幾個檔案
+category.rb
+category_test.rb
+categories.yml
+xxxxxxxx_create_categories.rb
+
+產生出資料庫資料表
+bundle exec rake db:migrate
+
+觀看 log tail -f log/development.log
+
+
 10/28 (4-8)
+controller > def > fountion
 
 *something wrong while finish deleted redirect to moives(index)
 when I use button_to(deleted), my update button will auto run def destory?

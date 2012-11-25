@@ -1,15 +1,3 @@
-problem: rake fail!!
--------------------------------
-saasbook@saasbook:~/Documents/myrottenpotatoes/app/controllers$ rake db:migrate
-(in /home/ubuntu/Documents/myrottenpotatoes)
-rake aborted!
-An error has occurred, this and all later migrations canceled:
-
-uninitialized constant CreatMovies
-Tasks: TOP => db:migrate
-(See full trace by running task with --trace)
--------------------------------
-
 11/3
 Pitfall: Modifying the database manually rather than using migrations, or managing gems manually rather than using Bundler.
 *Fat controllers and fat views.

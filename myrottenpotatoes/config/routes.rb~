@@ -1,5 +1,7 @@
 Rottenpotatoes::Application.routes.draw do
   
+    match 'auth/:provider/callback' => 'sessions#create',:as => 'login'
+    match 'logout' => 'sessions#destroy'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -16,6 +18,10 @@ Rottenpotatoes::Application.routes.draw do
   #   resources :products
   resources :home
   root :to => redirect('/home')
+  resources :movies
+  root :to => redirect('/movies')
+
+  
   # Sample resource route with options:
   #   resources :products do
   #     member do

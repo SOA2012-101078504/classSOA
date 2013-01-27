@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Everybody's Work</title>
+
+        <!-- The default timeline stylesheet -->
+        <link rel="stylesheet" href="/assets/timeline.css" />
+        <!-- Our customizations to the theme -->
+        <link rel="stylesheet" href="/assets/styles.css" />
+
+		<!-- Google Fonts -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Dancing+Script|Antic+Slab" />
+
+        <!--[if lt IE 9]>
+          <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+
+<div class="container main" id="timeline" >
+	<div class="feature slider" style="overflow-y: hidden;">
+		<div class="slider-container-mask slider-container slider-item-container">
+
+			<!-- The divs below are the events of the timeline -->
+
+			<div class="slider-item content">
+				<div class="text container">
+
+					<h2 class="start">Johnny B Goode</h2>
+					<p><em><span class="c1">Designer</span> &amp; <span class=
+					"c2">Developer</span></em></p>
+
+				</div>
+
+				<div class="media media-wrapper media-container">
+					<!-- Images or other media go here -->
+				</div>
+			</div>
+
+			<div class="slider-item content content-container">
+				<div class="text container">
+
+					<h2 class="date">March 2009</h2>
+					<h3>My first experiment in time-lapse photography</h3>
+					<p>Nature at its finest in this video.</p>
+
+				</div>
+
+				<div class="media media-wrapper media-container">
+					<!-- Images or other media go here -->
+				</div>
+			</div>
+
+			<!-- More items go here -->
+		</div>
+
+        <!-- Next arrow -->
+		<div class="nav-next nav-container">
+			<div class="icon"></div>
+			<div class="date">March 2010</div>
+			<div class="title">Logo Design for a pet shop</div>
+		</div>
+
+        <!-- Previous arrow -->
+		<div class="nav-previous nav-container">
+			<div class="icon"></div>
+			<div class="date">July 2009</div>
+			<div class="title">Another time-lapse experiment</div>
+		</div>
+	</div>
+
+	<div class="navigation">
+
+			<!-- The navigation items go here (the tooltips in the bottom)
+                one for each of the events -->
+
+			<div class="time">
+				<!-- The timeline numbers go here -->
+			</div>
+		</div>
+
+		<div class="timenav-background">
+			<div class="timenav-line" style="left: 633px;"></div>
+
+			<div class="timenav-interval-background top-highlight"></div>
+		</div>
+
+		<div class="toolbar" style="top: 27px;">
+			<div class="back-home icon" title="Return to Title"></div>
+			<div class="zoom-in icon" title="Expand Timeline"></div>
+			<div class="zoom-out icon" data-original-title="Contract Timeline"></div>
+		</div>
+	</div>
+</div>
+        <!-- JavaScript includes - jQuery, turn.js and our own script.js -->
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script src="assets/timeline-min.js"></script>
+		<script src="assets/script.js"></script>
+
+    </body>
+</html>

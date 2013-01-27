@@ -1,11 +1,46 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
-<head>
-  <title>Happy Learing</title>
-</head>
-<body>
-<h1>Hello, here is our English learning paltform!</h1>
-<%= yield %>
-
-</body>
+	<head>
+		<title><%= @page_title || "Untitled" %> : Login Layout</title>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css">
+		<%= javascript_include_tag 'admin' %>
+		<%= stylesheet_link_tag 'admin' %>
+	</head>
+	<body>
+		<div id="header">
+			<% if @current_user_name %>
+				<div id='logged_in_summary'>
+					Logged in as <strong><%= @current_user_name %></strong>
+					<% if @last_login_time %>
+						<br />Last login at <strong><%= @last_login_time %></strong>
+					<% end %>
+				</div>
+			<% end %>
+			<h1>Login Layout <span><%= @page_title %></h1>
+			<ul id='navigation'>
+				<% ANDY_ADMIN_MENU.main_items_each(@current_section_id) do |name, link, section_id, css_class| %>
+					<li class='<%= css_class %>'><a href='<%= link %>' id='<%= section_id %>'><%= name %></a></li>
+				<% end %>
+			</ul>
+			<ul id='subnavigation'>
+				<% ANDY_ADMIN_MENU.sub_items_each(@current_section_id) do |name, link, section_id, css_class| %>
+					<li class='<%= css_class %>'><a href='<%= link %>' id='<%= section_id %>'><%= name %></a></li>
+				<% end %>
+			</ul>
+		</div>
+		<%= content_tag(:div, "<span>close</span>".html_safe + flash[:notice], :class => "flash_notice") if flash[:notice] %>
+		<%= content_tag(:div, "<span>close</span>".html_safe + flash[:error], :class => "flash_error") if flash[:error] %>
+		<%= content_tag(:div, "<span>close</span>".html_safe + flash[:warning], :class => "flash_warning") if flash[:warning] %>
+		<div id='sidebar'>
+			<%= yield(:sidebar) %>
+		</div>
+		<div id='content'>
+			<%= yield %>
+		</div>
+		<div id='footer'>
+			Designed and developed by Your Name. Copyright &copy; <%= Time.now.year %>, all rights reserved.
+		</div>
+	</body>
 </html>

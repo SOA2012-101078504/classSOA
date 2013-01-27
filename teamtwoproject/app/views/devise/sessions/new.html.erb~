@@ -1,0 +1,67 @@
+<!--layout padding style="padding-right: 200px;"-->
+<head>
+<!--Show-->
+  <script>
+    function mytest()
+    {
+      document.getElementById("test").innerHTML="see~~";
+    }
+  </script>
+
+</head>
+<!--image top -->
+<body background="/assets/mybg.png">
+  <div id="headerbg" align="center">
+    <%= image_tag("el1.png", :alt => "rss feed") %>
+  <div id="headerblank">
+  </div>
+  </div>
+</body>
+
+<!--Mene home/project/about/contact -->
+<h2>
+  <div id='cssmenu' align="center">
+    <ul>
+    <li class='active '><a href='../'><span>Home</span></a></li>
+    <li class='has-sub '><a href='#'><span>Projects</span></a>
+    <ul>
+      <li><a href='welcome/myself'><span>Myself</span></a></li>
+      <li><a href='welcome/my_family'><span>My Family</span></a></li>
+      <li><a href='welcome/my_school'><span>My School</span></a></li>
+    </ul>
+    </li>
+    <li><a href='#'><span>About</span></a></li>
+    <li><a href='#'><span>Contact</span></a></li>
+    </ul>
+  </div>
+
+</h2>
+
+<table align="center">
+<td width="50%">
+<h2>Sign in</h2>
+
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email %></div>
+
+  <div><%= f.label :password %><br />
+  <%= f.password_field :password %></div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+  <% end -%>
+
+  <div><%= f.submit "Sign in" %></div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+</td>
+</table>
+
+<p align="center">
+  <%= image_tag("el2.jpg", :alt => "rss feed") %>
+</p>
+
+
+

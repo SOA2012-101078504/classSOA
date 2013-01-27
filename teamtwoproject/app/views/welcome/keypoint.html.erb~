@@ -1,0 +1,339 @@
+<!--layout padding style="padding-right: 200px;"-->
+<head>
+		<!-- 
+			This carousel example is created with jQuery and the carouFredSel-plugin.
+			http://jquery.com
+			http://caroufredsel.dev7studios.nl
+		-->
+
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1" />
+		<meta name="description" value="Using the build-in cover-, scroll- and uncover-effects, these three jQuery carousels placed on top of each other create a pretty cool effect." />
+		<meta name="keywords" value="sequence, carousel, uncover, uncovering, jquery" />
+		<title>A sequence of 3 carousels using the cover-, scroll- and uncover-effects</title>
+
+		<script src="http://code.jquery.com/jquery-1.8.2.min.js" type="text/javascript"></script>
+		<script src="/assets/jquery.carouFredSel-6.1.0-packed.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(function() {
+				var $l = $('#carousel-left'),
+					$c = $('#carousel-center'),
+					$r = $('#carousel-right');
+					
+				$l.carouFredSel({
+					auto: false,
+					items: 1,
+					direction: 'right',
+					prev: {
+						button: '#prev',
+						fx: 'uncover',
+						onBefore: function() {
+							setTimeout(function() {
+								$c.trigger( 'prev' );
+							}, 100);
+						}
+					},
+					next: {
+						fx: 'cover'
+					}
+				});
+				$c.carouFredSel({
+					auto: false,
+					items: 1,
+					prev: {
+						onBefore: function() {
+							setTimeout(function() {
+								$r.trigger( 'prev' );
+							}, 100);
+						}
+					},
+					next: {
+						onBefore: function() {
+							setTimeout(function() {
+								$l.trigger( 'next' );
+							}, 100);
+						}
+					}
+				});
+				$r.carouFredSel({
+					auto: false,
+					items: 1,
+					prev: {
+						fx: 'cover'
+					},
+					next: {
+						button: '#next',
+						fx: 'uncover',
+						onBefore: function() {
+							setTimeout(function() {
+								$c.trigger( 'next' );
+							}, 100);
+						}
+					}
+				});
+			});
+		</script>
+		<style type="text/css">
+			html, body {
+				height: 100%;
+				padding: 0;
+				margin: 0;
+			}
+			body {
+				background-color: #fff;
+				min-height: 600px;
+			}
+			body * {
+				font-family: Arial, Geneva, SunSans-Regular, sans-serif;
+				font-size: 14px;
+				color: #333;
+				line-height: 22px;
+			}
+
+			#wrapper {
+				width: 600px;
+				height: 450px;
+				margin: -20px 0 0 -250px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+			}
+			#carousel-left,
+			#carousel-right {
+				width: 180px;
+				height: 115px;
+				overflow: hidden;
+				position: absolute;
+				top: 65px;
+				z-index: 1;
+			}
+			#carousel-left {
+				left: 25px;
+			}
+			#carousel-right {
+				right: 60px;
+			}
+			#carousel-center {
+				width: 250px;
+				height: 180px;
+				overflow: hidden;
+				position: absolute;
+				top: 25px;
+				left: 180px;
+				z-index: 2;
+			}
+			.caroufredsel_wrapper {
+				box-shadow: 0 0 10px rgba( 0, 0, 0, 0.3 );
+			}
+			.caroufredsel_wrapper img {
+				display: block;
+				float: left;
+			}
+			#prev,
+			#next {
+				background: #ccc;
+				color: #fff;
+				font-size: 25px;
+				font-weight: bold;
+				text-align: center;
+				text-decoration: none;
+				text-shadow: 0 1px 2px rgba( 0, 0, 0, 0.6 );
+				line-height: 26px;
+				display: block;
+				width: 30px;
+				height: 30px;
+				margin-top: -15px;
+				position: absolute;
+				top: 50%;
+				z-index: 0;
+			}
+			#prev {
+				left: 0;
+			}
+			#next {
+				right: 0;
+			}
+			#prev:hover,
+			#next:hover {
+				background: #bbb;
+			}
+			
+			
+		</style>
+<!--Show-->
+  <script>
+    function myKeyPoint()
+    {
+      document.getElementById("test").innerHTML="Key Points:";
+      document.getElementById("self_kp").style.display='block'
+      movepic('self_kp','/assets/self_kp_1.png');
+      document.getElementById("cssmenu4").style.display='block'
+      document.getElementById("voca_tb").style.display='none'
+    }
+   //change images
+    function movepic(img_name,img_src) {
+      document.getElementById(img_name).src=img_src;
+    }
+    function myVoca()
+    {
+      document.getElementById("test").innerHTML="Topic One 可參考單字:";
+      movepic('self_kp','/assets/self_kp_1.png');
+      document.getElementById("cssmenu4").style.display='none'
+      document.getElementById("voca_tb").style.display='block'
+      document.getElementById("self_kp").style.display='none'
+      movepic('self_kp','');
+    }
+    function show_kp(id){
+      try{
+      var show = document.getElementBiId(id);
+      if(show){
+        if(show.style.display=='block'){
+          show.style.display='none';
+        }else{
+        show.style.display='block';
+        }
+      }
+      }catch(e){}
+    }
+  </script>
+
+</head>
+<!--image top -->
+<body >
+  <div id="headerbg" align="center">
+    <%= image_tag("el1.png", :alt => "rss feed") %>
+  <div id="headerblank">
+  </div>
+  </div>
+</body>
+
+<!--Mene home/project/about/contact -->
+<h2>
+  <div id='cssmenu'>
+    <ul>
+    <li class='active '><a href='../'><span>Home</span></a></li>
+    <li class='has-sub '><a href='#'><span>Projects</span></a>
+    <ul>
+      <li><a href='myself'><span>Myself</span></a></li>
+      <li><a href='my_family'><span>My Family</span></a></li>
+      <li><a href='my_school'><span>My School</span></a></li>
+    </ul>
+    </li>
+    <li><a href='#'><span>About</span></a></li>
+    <li><a href='#'><span>Contact</span></a></li>
+    </ul>
+  </div>
+
+</h2>
+<% if current_user %>
+
+<!--project resource -->
+<table border="0" width=700 align="center">
+  <tr>
+    <td>
+      <div id='cssmenu2'>
+      <ul>
+      <li><a href='#'><span>Learning Resource</span></a></li>
+      <li><a href='myself_ew'><span>Everybody's Work</span></a></li>
+      <li><a href='../people'><span>Upload My Work</span></a></li>
+      </ul>
+      </div>
+    </td>
+     
+  </tr>
+  <tr>
+</table>
+
+<!--project content -->
+<table border="0" width=750 align="center" >
+    <td width="20%" valign="top">
+      <div id='cssmenu3'>
+        <ul>
+        <li><a href='#' onclick="myKeyPoint()" ><span>Key Points</span></a></li>
+        <li><a href='#' onclick="myVoca()"><span>Vocabulary</span></a></li>
+        <li><a href='#' onclick="myEx()"><span>Example</span></a></li>
+        </ul>
+      </div>
+    </td>
+    <td width="80%" background="/assets/mybg.png">
+      <!--Key Points-->
+<br><br><br><br><br><br><br><br><br><br><br>
+      	<div id='wrapper' >
+			<div id="carousel-left">
+				<img src="/assets/self_kp_4.png" width="200" height="125" />
+				<img src="/assets/self_kp_1.png" width="200" height="125" />
+				<img src="/assets/self_kp_2.png" width="200" height="125"/ >
+				<img src="/assets/self_kp_3.png" width="200" height="125" />
+			</div>
+			<div id="carousel-center">
+				<img src="/assets/self_kp_1.png" width="250" height="200"/ >
+				<img src="/assets/self_kp_2.png" width="250" height="200" />
+				<img src="/assets/self_kp_3.png" width="250" height="200" />
+				<img src="/assets/self_kp_4.png" width="250" height="200" />
+			</div>
+			<div id="carousel-right">
+				<img src="/assets/self_kp_2.png" width="200" height="125"/ >
+				<img src="/assets/self_kp_3.png" width="200" height="125" />
+				<img src="/asset/self_kp_4.png" width="200" height="125" />
+				<img src="/assets/self_kp_1.png" width="200" height="125" />
+			</div>
+			<a id="prev" href="#">&lsaquo;</a>
+			<a id="next" href="#">&rsaquo;</a>
+		</div></p>
+	<!--Voca-->
+	<p id='voca_tb' style="display:none;">
+	<a href='http://www.wordsgo.com/2000trial/unit-02-1/2ku2u1_wlist.html'>Word List 1 </a> <br>
+	<a href='http://www.wordsgo.com/2000trial/unit-02-2/2ku2u2_wlist.html'>Word List 2 </a> <br>
+	<a href='http://www.wordsgo.com/2000trial/unit-02-3/2ku2u3_wlist.html'>Word List 3 </a>
+	<br><br>
+	  &nbsp;&nbsp;&nbsp;&nbsp;同學們可以參考以上單字，給予第一個學習主題: About Me一些靈感。<br>
+	  &nbsp;&nbsp;&nbsp;&nbsp;同時複習關於Personal characteristics的單字。<br>
+	  &nbsp;&nbsp;&nbsp;&nbsp;網站上提供單字的正確發音，讓同學在準備「說」的時候，能夠參考。<br>
+	  &nbsp;&nbsp;&nbsp;&nbsp;同學想使用單字時，可以利用Cambridge Dictionary查到用法，如：<br>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+        <IMG align="center" SRC="/assets/self_v_1.png">
+	<br>
+	  &nbsp;&nbsp;&nbsp;&nbsp;慢慢跟著正確的例句，學習字的用法，英文會進步非常快唷！
+	<br><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;以下的中文解釋，只是那個英文單字的其中一個解釋。<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;想知道單字的所有意義，還是要搭配使用English-English英英字典，<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;如Cambridge Dictionary才可以真正學好英文唷！
+	&nbsp;&nbsp;&nbsp;&nbsp;
+	<IMG align="center" SRC="/assets/self_v_2.png">
+	<br>
+	  &nbsp;&nbsp;&nbsp;&nbsp;↑同一格的字，基本上是相似字/反義字，同學可以搭配學習。是不是有<br>
+	  &nbsp;&nbsp;&nbsp;&nbsp;很多字不太熟悉呢？
+
+	</p>
+<br>
+        <IMG id="self_kp" SRC="0" ALT="jo" style="display:none;">
+
+    </td>
+  </tr>
+</table>
+
+<% else %>
+  Please login first.
+<% end %>
+<p align="center">
+  <font face="Arial" color="#cc333ff" size="5">
+    <% if current_user %>
+       <%= link_to('Log out', destroy_user_session_path, :method => :delete) %> 
+   <% else %>
+	<%= link_to 'Login', welcome_login_path %>
+   <% end %>
+	
+  </font> 
+</p>
+
+<p align="center">
+  <%= image_tag("el2.jpg", :alt => "rss feed") %>
+</p>
+
+
+<!--
+<p>DB modle</p>
+<!--<p><%= link_to 'Book List', books_path %></p>
+<p><%= link_to 'Members', people_path %></p>
+
+<p>Hola! Here is Team2's English Learning Project. It's <%= Time.now %></p>
+-->

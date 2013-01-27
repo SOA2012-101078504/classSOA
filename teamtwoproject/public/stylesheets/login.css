@@ -1,0 +1,158 @@
+/* ***************** GENERAL DEFINITIONS ***************** */
+
+html, body {
+	background-color: #e5e5e5;
+}
+
+* {
+	font-size: 10pt;
+	text-align: left;
+	line-height: 1.2em;
+}
+
+a {
+	color: #1a287f;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+/* ***************** FLASH DEFINITIONS ***************** */
+
+div.flash_error, div.flash_notice, div.flash_warning {
+	margin: -20px -20px 20px -20px;
+	padding: 10px;
+	color: white;
+	font-weight: bold;
+}
+
+div.flash_error {
+	background: #b72c23;
+}
+
+div.flash_notice {
+	background: #2bb723;
+}
+
+div.flash_warning {
+	color: black;
+	background: #e8ed2d;
+}
+
+/* ***************** AWESOME BUTTONS ***************** */
+
+/* From: http://www.zurb.com/ */
+.awesome, .awesome:visited {
+	background: #222 url(/images/admin-alert-overlay.png) repeat-x; 
+	display: inline-block; 
+	padding: 5px 10px 6px; 
+	color: #fff; 
+	text-decoration: none;
+	-moz-border-radius: 18px; 
+	-webkit-border-radius: 18px;
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+	border: 0px;
+	border-bottom: 1px solid rgba(0,0,0,0.25);
+	position: relative;
+	cursor: pointer;
+}
+
+	.awesome:hover							{ background-color: #111; color: #fff; }
+	.awesome:active							{ top: 1px; }
+	.small.awesome, .small.awesome:visited 			{ font-size: 11px; padding: ; }
+	.awesome, .awesome:visited,
+	.medium.awesome, .medium.awesome:visited 		{ font-size: 13px; font-weight: bold; line-height: 1; text-shadow: 0 -1px 1px rgba(0,0,0,0.25); }
+	.large.awesome, .large.awesome:visited 			{ font-size: 14px; padding: 8px 14px 9px; }
+	
+	.green.awesome, .green.awesome:visited		{ background-color: #91bd09; }
+	.green.awesome:hover						{ background-color: #749a02; }
+	.blue.awesome, .blue.awesome:visited		{ background-color: #2daebf; }
+	.blue.awesome:hover							{ background-color: #007d9a; }
+	.red.awesome, .red.awesome:visited			{ background-color: #e33100; }
+	.red.awesome:hover							{ background-color: #872300; }
+	.magenta.awesome, .magenta.awesome:visited		{ background-color: #a9014b; }
+	.magenta.awesome:hover							{ background-color: #630030; }
+	.orange.awesome, .orange.awesome:visited		{ background-color: #ff5c00; }
+	.orange.awesome:hover							{ background-color: #d45500; }
+	.yellow.awesome, .yellow.awesome:visited		{ background-color: #ffb515; }
+	.yellow.awesome:hover							{ background-color: #fc9200; }
+
+a.awesome:hover {
+	text-decoration: none;
+}
+
+/* ***************** LOGIN FORM ***************** */
+
+div#login {
+	width: 250px;
+	margin: 100px auto 50px auto;
+	background: white;
+	padding: 20px;
+	box-shadow: 5px 5px 5px #888;
+	-moz-box-shadow:5px 5px 5px #888;
+	-webkit-box-shadow: 5px 5px 5px #888;
+	border-radius: 5px; 
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px;
+}
+
+div#login h1 {
+	margin: -20px -20px 20px -20px;
+	background: #edeffc;
+	padding: 10px 20px;
+	font-size: 15pt;
+	font-weight: bold;
+	color: black;
+	position: relative;
+	border-radius-topleft: 5px;
+	border-radius-topright: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+}
+
+/* ***************** FORM ELEMENTS ***************** */
+
+form h2 {
+	font-weight: bold;
+	font-size: 120%;
+	color: black;
+	display: inline;
+}
+
+form span.error {
+	color: red;
+}
+
+form div.description {
+	color: #666666;
+}
+
+form div.input {
+	margin-bottom: 10px;
+}
+
+form textarea {
+	width: 100%;
+}
+
+form input[type='text'] {
+	width: 99%;
+}
+
+form div.actions {
+	margin-top: 20px;
+}
+
+/* ***************** FOOTER ***************** */
+
+div#footer {
+	margin: 20px;
+	color: #aaa;
+	text-align: center;
+}

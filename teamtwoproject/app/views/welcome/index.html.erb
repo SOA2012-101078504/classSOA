@@ -1,5 +1,93 @@
-<p>Hola! Here is Team2's English Learning Project. It's <%= Time.now %></p>
-<p><%= link_to 'Hello!', welcome_say_hello_path %></p>
+<!--layout padding style="padding-right: 200px;"-->
+<head>
+<!--Show-->
+  <script>
+    function about()
+    {
+      document.getElementById("choose").style.display='none'
+      document.getElementById("about").style.display='block'
+    }
+    function home()
+    {
+      document.getElementById("choose").style.display='block'
+      document.getElementById("about").style.display='none'
+    }
+  </script>
+
+</head>
+<!--image top -->
+<body background="/assets/mybg.png">
+  <div id="headerbg" align="center">
+    <%= image_tag("el1.png", :alt => "rss feed") %>
+  <div id="headerblank">
+  </div>
+  </div>
+</body>
+
+<!--Mene home/project/about/contact -->
+<h2>
+  <div id='cssmenu' align="center">
+    <ul>
+    <li class='active ' onclick="home()"><a href='../'><span>Home</span></a></li>
+    <li class='has-sub '><a href='#'><span>Projects</span></a>
+    <ul>
+      <li><a href='welcome/myself'><span>Myself</span></a></li>
+      <li><a href='welcome/my_family'><span>My Family</span></a></li>
+      <li><a href='welcome/my_school'><span>My School</span></a></li>
+    </ul>
+    </li>
+    <li><a href='#' onclick="about()"><span>About</span></a></li>
+    <li><a href='#'><span>Contact</span></a></li>
+    </ul>
+  </div>
+
+</h2>
+    <% if current_user %>
+	<br>
+       <p id='choose' align="Center">Choose a project!!</p>
+	
+       <table id='about' align="Center" style="display:none;" width=600>
+	<td>
+	<h2>What is this program about?</h2>
+
+This program helps you develop English skills and meanwhile review vocabularies for entrance exam.<br>
+First, you have to team up 4 partners.
+Program will last one semester. You will practice three subject during this period with your partners.<br>
+You can present via anyway you want. <br>For example, text with pictures, video or anyway.
+You should consult to your mentors anytime you feel confused.
+This program also cooperate with Weekend English Talk Camp at Computer Centre, making sure you're making efforts on your works.
+After this program, you are able to introduce lots of things related to you. 
+The best way learning English is not sitting in class, is to practice!
+</td>
+</table>
+	<br>
+   <% else %>
+	<br>
+	<p align="Center">Please login first.</p>	
+	<br>
+   <% end %>
+
+
+<p align="center">
+  <font face="Arial" color="#cc333ff" size="5">
+    <% if current_user %>
+       <%= link_to('Log out', destroy_user_session_path, :method => :delete) %> 
+   <% else %>
+	<%= link_to 'Login', welcome_login_path %>
+   <% end %>
+	
+  </font> 
+</p>
+
+<p align="center">
+  <%= image_tag("el2.jpg", :alt => "rss feed") %>
+</p>
+
+
+<!--
 <p>DB modle</p>
-<p><%= link_to 'Book List', books_path %></p>
+<!--<p><%= link_to 'Book List', books_path %></p>
 <p><%= link_to 'Members', people_path %></p>
+
+<p>Hola! Here is Team2's English Learning Project. It's <%= Time.now %></p>
+-->

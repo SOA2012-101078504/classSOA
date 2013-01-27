@@ -1,0 +1,66 @@
+<!--layout padding style="padding-right: 200px;"-->
+<head>
+<!--Show-->
+  <script>
+    function mytest()
+    {
+      document.getElementById("test").innerHTML="see~~";
+    }
+  </script>
+
+</head>
+<!--image top -->
+<body background="/assets/mybg.png">
+  <div id="headerbg" align="center">
+    <%= image_tag("el1.png", :alt => "rss feed") %>
+  <div id="headerblank">
+  </div>
+  </div>
+</body>
+
+<!--Mene home/project/about/contact -->
+<h2>
+  <div id='cssmenu' align="center">
+    <ul>
+    <li class='active '><a href='../'><span>Home</span></a></li>
+    <li class='has-sub '><a href='#'><span>Projects</span></a>
+    <ul>
+      <li><a href='welcome/myself'><span>Myself</span></a></li>
+      <li><a href='welcome/my_family'><span>My Family</span></a></li>
+      <li><a href='welcome/my_school'><span>My School</span></a></li>
+    </ul>
+    </li>
+    <li><a href='#'><span>About</span></a></li>
+    <li><a href='#'><span>Contact</span></a></li>
+    </ul>
+  </div>
+
+</h2>
+
+<p align="center">
+
+<br><br><br>
+   <% if current_user %>
+       <%= link_to('登出', destroy_user_session_path, :method => :delete) %> |
+     <%= link_to('修改密碼', edit_registration_path(:user)) %>
+   <% else %>
+   	  <%= link_to('註冊', new_registration_path(:user)) %> |
+        <%= link_to('登入', new_session_path(:user)) %>
+   <% end %>
+<br><br><br>
+
+</p>
+
+<p align="center">
+  <%= image_tag("el2.jpg", :alt => "rss feed") %>
+</p>
+
+
+<!--
+<p>DB modle</p>
+<!--<p><%= link_to 'Book List', books_path %></p>
+<p><%= link_to 'Members', people_path %></p>
+
+<p>Hola! Here is Team2's English Learning Project. It's <%= Time.now %></p>
+-->
+

@@ -1,17 +1,145 @@
-<p id="notice"><%= notice %></p>
 
+
+
+<p id="notice"><%= notice %></p>
+<head>
+<!--Show-->
+
+</head>
+<!--image top -->
+<body >
+  <div id="headerbg" align="center">
+    <%= image_tag("el1.png", :alt => "rss feed") %>
+  <div id="headerblank">
+  </div>
+  </div>
+</body>
+<h2>
+  <div id='cssmenu'>
+    <ul>
+    <li class='active '><a href='../'><span>Home</span></a></li>
+    <li class='has-sub '><a href='#'><span>Projects</span></a>
+    <ul>
+      <li><a href='myself'><span>Myself</span></a></li>
+      <li><a href='my_family'><span>My Family</span></a></li>
+      <li><a href='my_school'><span>My School</span></a></li>
+    </ul>
+    </li>
+    <li><a href='#'><span>About</span></a></li>
+    <li><a href='#'><span>Contact</span></a></li>
+    </ul>
+  </div>
+
+</h2>
+<% if current_user %>
+
+<!--project resource -->
+<table border="0" width="90%" align="center">
+  <tr>
+    <td>
+      <div id='cssmenu2'>
+      <ul>
+      <li><a href='#'><span>Learning Resource</span></a></li>
+      <li><a href='myself_ew'><span>Everybody's Work</span></a></li>
+      <li><a href='../people'><span>Upload My Work</span></a></li>
+      </ul>
+      </div>
+    </td>
+     
+  </tr>
+  <tr>
+</table>
+
+<head>
+<!--Show-->
+
+</head>
+<!--image top -->
+<body >
+  <div id="headerbg" align="center">
+    <%= image_tag("el1.png", :alt => "rss feed") %>
+  <div id="headerblank">
+  </div>
+  </div>
+</body>
+<h2>
+  <div id='cssmenu'>
+    <ul>
+    <li class='active '><a href='../'><span>Home</span></a></li>
+    <li class='has-sub '><a href='#'><span>Projects</span></a>
+    <ul>
+      <li><a href='welcome/myself'><span>Myself</span></a></li>
+      <li><a href='welcome/my_family'><span>My Family</span></a></li>
+      <li><a href='welcome/my_school'><span>My School</span></a></li>
+    </ul>
+    </li>
+    <li><a href='#'><span>About</span></a></li>
+    <li><a href='#'><span>Contact</span></a></li>
+    </ul>
+  </div>
+
+</h2>
+<% if current_user %>
+
+<!--project resource -->
+<table border="0" width="90%" align="center">
+  <tr>
+    <td>
+      <div id='cssmenu2'>
+      <ul>
+      <li><a href='welcome/myself'><span>Learning Resource</span></a></li>
+      <li><a href='myself_ew'><span>Everybody's Work</span></a></li>
+      <li><a href='../people'><span>Upload My Work</span></a></li>
+      </ul>
+      </div>
+    </td>
+     
+  </tr>
+  <tr>
+</table>
+
+<!--project content -->
+<table border="0" width="80%" align="center" >
+
+    <td width="70%" background="/assets/mybg.png">
+
+
+
+        
+
+    </td>
+  </tr>
+</table>
+
+<% else %>
+  Please login first.
+<% end %>
+<p align="center">
+  <font face="Arial" color="#cc333ff" size="5">
+    <% if current_user %>
+       <%= link_to('Log out', destroy_user_session_path, :method => :delete) %> 
+   <% else %>
+	<%= link_to 'Login', welcome_login_path %>
+   <% end %>
+	
+  </font> 
+</p>
+
+<p align="center">
+  <%= image_tag("el2.jpg", :alt => "rss feed") %>
+</p>
 <p>
-  <b>Name:</b>
+  <b>Project:</b>
   <%= @person.name %>
 </p>
 
 <p>
-  <b>Bio:</b>
+  <b>Article:</b><br>
   <%= @person.bio %>
 </p>
 
 <p>
-  <b>Birthday:</b>
+  <b>Deadline:</b>
   <%= @person.birthday %>
 </p>
 

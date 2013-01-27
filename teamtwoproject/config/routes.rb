@@ -1,4 +1,6 @@
 Myhehetest::Application.routes.draw do
+  devise_for :users
+
   resources :people
   resources :books
   
@@ -6,7 +8,12 @@ Myhehetest::Application.routes.draw do
   root :to => "welcome#index"
   
   #welcome_page
-  get "welcome/say_hello" => "welcome#say"
+  get "welcome/my_school" => "welcome#my_school"
+  get "welcome/keypoint" => "welcome#keypoint"
+  get "welcome/watch" => "welcome#watch"
+  get "welcome/my_family" => "welcome#my_family"
+  get "welcome/myself" => "welcome#myself"
+  get "welcome/login" => "welcome#login"
   get "welcome" => "welcome#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
